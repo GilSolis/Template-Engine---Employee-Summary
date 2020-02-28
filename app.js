@@ -9,6 +9,91 @@ const OUTPUT_DIR = path.resolve(__dirname, "output")
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 ​
 const render = require("./lib/htmlRenderer");
+
+let role;
+let name;
+let id;
+let github;
+let email;
+let officeNumber;
+let school;
+
+const employees = [];
+
+const menu = () => {
+    inquirer.prompt([
+        {
+            type: 'list',
+            name: 'Employee Role',
+            message: "What is the role? Select 'Done' if no more employees",
+            choices: ['Engineer', 'Intern', 'Manager', 'Done']
+        },
+    ]).then(teamMembers => {
+        console.log(teamMembers);
+        role = workers['Employee Role'];
+        console.log(role);
+
+        eachRole()
+    })
+}
+
+const eachRole = () => {
+    switch(role) {
+
+        case "Engineer":
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'Github Username',
+                    message: "What is the engineer's GitHub username?"
+                }
+            ]).then(handle => {
+                console.log(handle);
+                github = handle["GitHub Username"];
+                console.log(github);
+                allRoles();
+            })
+
+            break;
+        
+        case 'Manager':
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'Office Number',
+                    message: "what is the manager's office number?"
+                }
+            ]).then(office => {
+                console.log(office);
+                officeNumber = office["office Number"];
+                console.log(officeNumber);
+                allRoles();
+            })
+
+            break;
+
+            case 'Intern':
+                inquirer.prompt([
+                    {
+                        type: 'input',
+                        name: 'School',
+                        message: "Which school is the intern attending?"
+                    }
+                ]).then(school => {
+                    console.log(school);
+                    school = school['School'];
+                    console.log(school);
+                    allRoles();
+                })
+
+                break;
+
+                case 'Done':
+                    render(employees)    
+    }
+}
+
+submenu2 = allRoles
 ​
 ​
 // Write code to use inquirer to gather information about the development team members,
