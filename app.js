@@ -93,7 +93,37 @@ const eachRole = () => {
     }
 }
 
-submenu2 = allRoles
+const allRoles = () => {
+    inquirer.prompt([
+        {
+            type: 'input',
+            name: 'Employee Name',
+            message: "What is the employee's name?"
+        },
+        {
+            type: 'input',
+            name: 'Employee ID',
+            message: "What is the employee ID number?"
+        },
+        {
+            type: 'email',
+            name: "Employee Email",
+            message: "What is employee's email?"
+        }
+      ]).then(answers => {
+        name = answers['Employee Name'];
+        console.log(name);
+        id = answers['Employee ID'];
+        console.log(id);
+        email = ['Employee Email'];
+        console.log(email);
+
+        addEmployees();
+      })
+}
+
+
+
 ​
 ​
 // Write code to use inquirer to gather information about the development team members,
