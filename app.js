@@ -122,7 +122,27 @@ const allRoles = () => {
       })
 }
 
+const addEmployees = () => {
 
+    switch(role) {
+        case 'Engineer':
+            employees.push(new Engineer(name, id, email, github));
+            menu();
+            break;
+        case 'Intern':
+            employees.push(new Intern(name, id, email, school));
+            menu();
+            break;
+        case 'Manager':
+            employees.push(new Manager(name, id, email, officeNumber));
+            menu();
+            break;
+
+    }
+}
+
+menu()
+module.exports = employees;
 
 ​
 ​
