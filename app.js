@@ -5,6 +5,7 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
+// const outputPath = path.resolve(__dirname, "output", "team.html");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
@@ -89,6 +90,7 @@ const eachRole = () => {
 
     case "Done":
       render(employees);
+      renderToFile();
   }
 };
 
@@ -132,16 +134,27 @@ const addEmployee = () => {
       break;
 
     case "Intern":
-      employees.push(new Engineer(name, id, email, school));
+      employees.push(new Intern(name, id, email, school));
       menu();
       break;
 
     case "Manager":
-      employees.push(new Engineer(name, id, email, officeNumber));
+      employees.push(new Manager(name, id, email, officeNumber));
       menu();
       break;
   }
 };
+
+const renderToFile = () => {
+  fs.writeFile("./output/team.html", render(employees), "utf8", err => {
+    console.log("write my damn file gil");
+    if (err) {
+      console.log(err);
+    }
+    return;
+  });
+};
+
 menu();
 module.exports = employees;
 
