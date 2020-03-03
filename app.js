@@ -33,7 +33,7 @@ const menu = () => {
       }
     ])
     .then(teamMembers => {
-      console.log(teamMembers);
+      // console.log(teamMembers);
       role = teamMembers["Employee Role"];
 
       eachRole();
@@ -147,7 +147,6 @@ const addEmployee = () => {
 
 const renderToFile = () => {
   fs.writeFile("./output/team.html", render(employees), "utf8", err => {
-    console.log("write my damn file gil");
     if (err) {
       console.log(err);
     }
