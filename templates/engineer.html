@@ -1,20 +1,29 @@
-<div class="card employee-card">
+<div
+  class="card employee-card"
+  style="max-width: 18rem; background-color: lightskyblue"
+>
   <div class="card-header">
     <h2 class="card-title">{{ name }}</h2>
-    <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>{{ role }}</h3>
+    <h3 class="card-title" style="color: black">
+      <i class="fas fa-glasses mr-2" style="color: black"></i>{{ role }}
+    </h3>
   </div>
   <div class="card-body">
     <ul class="list-group">
-      <li class="list-group-item">ID: {{ id }}</li>
-      <li class="list-group-item">
-        Email: <a href="mailto:{{ email }}">{{ email }}</a>
+      <li class="list-group-item" style="background-color: rgb(43, 162, 236)">
+        ID: {{ id }}
       </li>
-      <li class="list-group-item">
+      <li class="list-group-item" style="background-color: rgb(3, 107, 172)">
+        Email:
+        <a href="mailto:{{ email }}" style="color: black">{{ email }}</a>
+      </li>
+      <li class="list-group-item" style="background-color: rgb(43, 162, 236)">
         GitHub:
         <a
           href="https://github.com/{{ github }}"
           target="_blank"
           rel="noopener noreferrer"
+          style="color: black"
           >{{ github }}</a
         >
       </li>
