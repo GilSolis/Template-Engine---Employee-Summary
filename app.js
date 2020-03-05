@@ -81,8 +81,10 @@ const eachRole = () => {
             message: "Which school is the intern attending?"
           }
         ])
-        .then(school => {
-          school = school["Sponsoring School"];
+        .then(university => {
+          school = university["School"];
+          console.log("you are here");
+          console.log(school);
           allRoles();
         });
 
