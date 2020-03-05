@@ -100,7 +100,7 @@ const allRoles = () => {
       {
         type: "input",
         name: "Employee Name",
-        message: "What is the empleyee name?"
+        message: "What is the employee name?"
       },
       {
         type: "input",
