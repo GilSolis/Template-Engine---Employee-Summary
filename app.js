@@ -83,8 +83,6 @@ const eachRole = () => {
         ])
         .then(university => {
           school = university["School"];
-          console.log("you are here");
-          console.log(school);
           allRoles();
         });
 
